@@ -1,0 +1,13 @@
+FROM ubuntu:16.04
+LABEL MAINTAILNER='SURESH'
+RUN apt-get update -y
+RUN apt-get install apache2 -y
+RUN apt-get install wget -y
+RUN apt-get install unzip -y
+WORKDIR /tmp
+RUN wget https://github.com/rcp-suresh/static/archive/master.zip
+RUN unzip master.zip
+RUN mv static-master/* /var/www/html/
+
+EXPOSE 80
+CMD ["apachectl", "-D", "FOREGROUND"]

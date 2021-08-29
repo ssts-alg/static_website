@@ -7,6 +7,6 @@ RUN apt-get install apache2 -y
 RUN apt-get install git -y
 WORKDIR /tmp
 RUN git clone https://github.com/sureshbabu-alg/static_website.git
-RUN mv static/* /var/www/html/
+RUN mv static_website/* /var/www/html/
 EXPOSE 80
 CMD ["apachectl", "-D", "FOREGROUND"]

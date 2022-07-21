@@ -11,3 +11,6 @@ RUN mv static-master/* /var/www/html/
 
 EXPOSE 80
 CMD ["apachectl", "-D", "FOREGROUND"]
+
+
+##########
